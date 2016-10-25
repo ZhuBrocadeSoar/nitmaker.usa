@@ -9,7 +9,7 @@ mysql_select_db("ss_user_man", $con);
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $inputedPort = $_POST["inputedPort"];
     $inputedPasswd = $_POST["inputedPasswd"];
-    $result = mysql_query("SELECT id,port,passwd FROM portPasswd");
+    $result = mysql_query('SELECT * FROM portPasswd WHERE port = $inputedPort');
     while($row = mysql_fetch_array($result)){
         if($row["port"] == $inputedPort){
             if($row["passwd"] == $inputedPasswd){
