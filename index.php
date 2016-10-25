@@ -7,6 +7,7 @@ if(!$con){
 mysql_select_db("portPasswd", $con);
 
 $result = mysql_query("SELECT * FROM portPasswd");
+echo $result;
 
 echo "<table border='1'>
 <tr>
