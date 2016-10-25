@@ -10,13 +10,19 @@ $result = mysql_query("SELECT * FROM portPasswd");
 
 echo "<table border='1'>
 <tr>
+<th>id</th>
 <th>port</th>
 <th>passwd</th>
+<th>adminLimit</th>
+<th>cdkey</th>
 </tr>";
 while($row = mysql_fetch_array($result)){
     echo "<tr>";
+    echo "<td>" . $row['id'] . "</td>";
     echo "<td>" . $row['port'] . "</td>";
     echo "<td>" . $row['passwd'] . "</td>";
+    echo "<td>" . $row['adminLimit'] . "</td>";
+    echo "<td>" . $row['cdkey'] . "</td>";
     echo "</tr>";
 }
 echo "</table>";
