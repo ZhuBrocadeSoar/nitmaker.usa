@@ -4,7 +4,7 @@ if(!$con){
     die('Could not connect:' . mysql_error());
 }
 
-mysql_select_db("portPasswd", $con);
+mysql_select_db("ss_user_man", $con);
 
 $result = mysql_query("SELECT * FROM portPasswd");
 echo $result;
