@@ -12,7 +12,7 @@ echo "<table border='1'>
 <tr>
 <th>port</th>
 <th>passwd</th>
-</tr>"
+</tr>";
 while($row = mysql_fetch_array($result)){
     echo "<tr>";
     echo "<td>" . $row['port'] . "</td>";
