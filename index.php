@@ -24,8 +24,10 @@ while($row = mysql_fetch_array($result)){
     echo "<td>" . $row['adminLimit'] . "</td>";
     echo "<td>" . $row['cdkey'] . "</td>";
     echo "</tr>";
+    $count = $count + 1;
 }
 echo "</table>";
+echo $count;
 
 phpinfo();
 ?>
