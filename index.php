@@ -1,35 +1,11 @@
-<?php
-$con = mysql_connect("localhost","soar","passwd");
-if(!$con){
-    die('Could not connect:' . mysql_error());
-}
-
-mysql_select_db("ss_user_man", $con);
-
-$result = mysql_query("SELECT * FROM portPasswd");
-echo $result;
-
-echo "<table border='1'>
-<tr>
-<th>id</th>
-<th>port</th>
-<th>passwd</th>
-<th>adminLimit</th>
-<th>cdkey</th>
-</tr>";
-$count = 0;
-while($row = mysql_fetch_array($result)){
-    echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['port'] . "</td>";
-    echo "<td>" . $row['passwd'] . "</td>";
-    echo "<td>" . $row['adminLimit'] . "</td>";
-    echo "<td>" . $row['cdkey'] . "</td>";
-    echo "</tr>";
-    $count = $count + 1;
-}
-echo "</table>";
-echo $count;
-
-phpinfo();
-?>
+<html>
+<body>
+<form action = "deal.php" method = "post">
+You can login with your port and password or <a herf = "104.160.32.39/nitmaker.usa/signup.php">sign up</a>
+<br/>
+Port:<input type = "int" name = "inputedPort"><br/>
+Password:<input type = "text" name = "inputedPasswd"><br/>
+<input type = "submit">
+</form>
+</body>
+</html>
