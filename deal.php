@@ -29,3 +29,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 ?>
+
+<html>
+<body>
+<p>Select a function</p>
+<form action = "viewPortPasswdTable.php" method = "post">
+<input type = "submit" value = "View the portPasswd table">
+</form>
+</body>
+</html>
