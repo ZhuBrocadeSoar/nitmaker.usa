@@ -16,6 +16,7 @@ echo "<table border='1'>
 <th>adminLimit</th>
 <th>cdkey</th>
 </tr>";
+$count = 0;
 while($row = mysql_fetch_array($result)){
     echo "<tr>";
     echo "<td>" . $row['id'] . "</td>";
