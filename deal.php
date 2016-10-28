@@ -38,10 +38,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
     switch($state){
-    case "success":
-        echo "<input type 'submit' value = 'Get SS infomation'>";
     case "admin0":
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
+    case "success":
+        echo "<input type = 'submit' value = 'Get SS infomation'>";
         break;
     default:
         break;
