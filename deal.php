@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<p>Select a function</p>";
         echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
-        echo "<input type = 'hidden' name = 'state' value = $state>";
+        echo "<input type = 'hidden' name = 'state' value = '$state'>";
         echo "</form>";
     }else{
         echo "Faild!<br/>";
@@ -35,5 +35,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
+<p>Select a function</p>
+<form action = "viewPortPasswdTable.php" method = "post">
+<input type = "submit" value = "View the portPasswd table">
+</form>
 </body>
 </html>
