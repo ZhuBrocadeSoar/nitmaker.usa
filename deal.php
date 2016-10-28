@@ -28,19 +28,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $state = "errport";
     }
     switch($state){
-    case "success":case "admin0":
+    case "success":case "admin0"://登录成功
         echo "<p>Sueecssfully Sign in</p>";
         echo "<p>Select a function</p>";
         break;
-    default:
+    case "errport":
+        echo "<p>This port is unavailable!</p>";
         echo "<p>Faild to Sign in</p>";
         break;
+    case "errpasswd":
+        echo "<p>Password not mach!</p>";
+        echo "<p>Faild to Sign in</p>";
+        break;
+    default:
+        break;
     }
+    //提交表单
     echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
     switch($state){
     case "admin0":
+        //管理员0的查看所有portpasswd按钮
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
     case "success":
+        //登录成功的用户的查看自己SS信息的按钮
         echo "<input type = 'submit' value = 'Get SS infomation'>";
         break;
     default:
