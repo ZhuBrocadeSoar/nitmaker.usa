@@ -2,7 +2,7 @@
 <body>
 <?php
 $con = mysql_connect("localhost","soar","passwd");
-if(!con){
+if(!$con){
     die('Could not connect:' . mysql_error());
 }
 mysql_select_db("ss_user_man", $con);
@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($row = mysql_fetch_array($result)){//port 匹配
         if($row["passwd"] == $inputedPasswd){//passwd 匹配
             $state = "success";
-            $id = row["id"];
+            $id = $row["id"];
             if($row["adminLimit"] == 0){//管理员权限检查
                 $state = "admin0";
             }
@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $state = "errport";
     }
     switch($state){
-    case "success":case "admin0";
+    case "success":case "admin0":
         echo "<p>Sueecssfully Sign in</p>";
         echo "<p>Select a function</p>";
         break;
