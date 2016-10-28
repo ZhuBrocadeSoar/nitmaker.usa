@@ -1,4 +1,5 @@
 <?php
+if($_POST['state'] == 'success'){
 $con = mysql_connect("localhost","soar","passwd");
 if(!$con){
     die('Could not connect:' . mysql_error());
@@ -28,5 +29,7 @@ while($row = mysql_fetch_array($result)){
     $count = $count + 1;
 }
 echo "</table>";
-
+}else{
+    echo "<p>Permition denied!</p>";
+}
 ?>
