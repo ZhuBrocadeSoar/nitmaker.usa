@@ -22,9 +22,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     switch($state){
-    case "success":
+    case "success":case "admin0";
         echo "<p>Sueecssfully Sign in</p>";
         echo "<p>Select a function</p>";
+        break;
+    default:
+        echo "<p>Faild to Sign in</p>";
+        break;
+    }
+    switch($state){
     case "admin0":
         echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
@@ -32,7 +38,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "</form>";
         break;
     default:
-        echo "<p>Faild to Sign in</p>";
         break;
     }
 }else{
