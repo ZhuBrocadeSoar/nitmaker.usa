@@ -15,18 +15,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     while($row = mysql_fetch_array($result)){
         if($row["passwd"] == $inputedPasswd){
             $state = "success";
+            if($row["adminLimit"] == 0){
+                $state = "admin0";
+            }
             break;
         }
     }
-    if($state == "success"){
+    switch($state){
+    case "success":
         echo "<p>Sueecssfully Sign in</p>";
         echo "<p>Select a function</p>";
+    case "admin0":
         echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
         echo "<input type = 'hidden' name = 'state' value = '$state'>";
         echo "</form>";
-    }else{
-        echo "Faild!<br/>";
+        break;
+    default:
+        echo "<p>Faild to Sign in</p>";
+        break;
     }
 }else{
     echo "Could not get datas from post<br/>";
