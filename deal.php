@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     switch($state){
-    case "success":case "admin0":
+    case "success":
         echo "<p>Sueecssfully Sign in</p>";
         echo "<p>Select a function</p>";
     case "admin0":
