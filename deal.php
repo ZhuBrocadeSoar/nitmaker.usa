@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $state = "errport";
     }
     switch($state){
-    case "success":case "admin0":
+    case "success":case "admin0";
         echo "<p>Sueecssfully Sign in</p>";
         echo "<p>Select a function</p>";
         break;
