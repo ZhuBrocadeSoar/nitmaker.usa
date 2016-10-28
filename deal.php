@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php
 $con = mysql_connect("localhost","soar","passwd");
 if(!con){
@@ -9,18 +11,20 @@ mysql_select_db("ss_user_man", $con);
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $inputedPort = $_POST["inputedPort"];
     $inputedPasswd = $_POST["inputedPasswd"];
-    $cmdOfSql = "SELECT * FROM portPasswd WHERE port = $inputedPort";
-    $result = mysql_query($cmdOfSql);
+    $result = mysql_query("SELECT * FROM portPasswd WHERE port = $inputedPort");
     while($row = mysql_fetch_array($result)){
-        if($row["port"] == $inputedPort){
-            if($row["passwd"] == $inputedPasswd){
-                $state = "success";
-                break;
-            }
+        if($row["passwd"] == $inputedPasswd){
+            $state = "success";
+            break;
         }
     }
     if($state == "success"){
-        echo "Sueecssfully Sign in<br/>";
+        echo "<p>Sueecssfully Sign in</p>";
+        echo "<p>Select a function</p>";
+        echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
+        echo "<input type = 'submit' value = 'View the portPasswd table'>";
+        echo "<input type = 'hidden' name = 'state' value = $state>";
+        echo "</form>";
     }else{
         echo "Faild!<br/>";
     }
@@ -31,11 +35,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
-<html>
-<body>
-<p>Select a function</p>
-<form action = "viewPortPasswdTable.php" method = "post">
-<input type = "submit" value = "View the portPasswd table">
-</form>
 </body>
 </html>
