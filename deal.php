@@ -49,9 +49,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     case "admin0":
         //管理员0的查看所有portpasswd按钮
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
+        echo "<input type = 'hidden' name = 'flag' value = 'allportpasswd'>";
     case "success":
         //登录成功的用户的查看自己SS信息的按钮
         echo "<input type = 'submit' value = 'Get SS infomation'>";
+        echo "<input type = 'hidden' name = 'flag' value = 'ssinfomation'>";
         break;
     default:
         break;

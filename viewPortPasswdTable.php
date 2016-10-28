@@ -6,31 +6,33 @@ if(!$con){
 
 mysql_select_db("ss_user_man", $con);
 
-switch($_POST["state"]){
-case "admin0":
-    $result = mysql_query("SELECT * FROM portPasswd");
-    //绘制表头
-    echo "<table border='1'>
-        <tr>
-        <th>id</th>
-        <th>port</th>
-        <th>passwd</th>
-        <th>adminLimit</th>
-        <th>cdkey</th>
-        </tr>";
-while($row = mysql_fetch_array($result)){
-    //打印记录
-    echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['port'] . "</td>";
-    echo "<td>" . $row['passwd'] . "</td>";
-    echo "<td>" . $row['adminLimit'] . "</td>";
-    echo "<td>" . $row['cdkey'] . "</td>";
-    echo "</tr>";
-}
-echo "</table>";
-break;
-case "success":
+switch($_POST["flag"]){
+case "allportpasswd":
+    if($_POST["state"] == "admin0"){
+        $result = mysql_query("SELECT * FROM portPasswd");
+        //绘制表头
+        echo "<table border='1'>
+            <tr>
+            <th>id</th>
+            <th>port</th>
+            <th>passwd</th>
+            <th>adminLimit</th>
+            <th>cdkey</th>
+            </tr>";
+        while($row = mysql_fetch_array($result)){
+            //打印记录
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['port'] . "</td>";
+            echo "<td>" . $row['passwd'] . "</td>";
+            echo "<td>" . $row['adminLimit'] . "</td>";
+            echo "<td>" . $row['cdkey'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+    }
+    break;
+case "ssinfomation":
     $result = mysql_query("SELECT id,port,passwd FROM portPasswd WHERE id = $id");
     $row = mysql_fetch_array($result);
     //绘制表头
@@ -50,6 +52,6 @@ echo "<tr>" . "AES-256-CFB" . "</tr>";
 echo "<tr>" . "1080(Not care,use default value)<br/>(本地端口可以使用默认值)" . "</tr>";
 echo "</td>";
 echo "</table>";
-    break;
+break;
 }
 ?>
