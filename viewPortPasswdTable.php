@@ -34,6 +34,8 @@ case "allportpasswd":
     break;
 case "ssinfomation":
     $result = mysql_query("SELECT id,port,passwd FROM portPasswd WHERE id = $id");
+    if(!$result)
+        echo "Not find id = $id";
     $row = mysql_fetch_array($result);
     echo "<table border = '1'>";
     echo "<tr>";
