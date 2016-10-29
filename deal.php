@@ -52,12 +52,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
         echo "<input type = 'hidden' name = 'submitFlag' value = 'allportpasswd'>";
+        echo "<input type = 'hidden' name = 'state' value = '$state'>";
+        echo "<input type = 'hidden' name = 'id' value = $id >";
         echo "</form>";
     case "success":
         //登录成功的用户的查看自己SS信息的按钮
         echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
         echo "<input type = 'submit' value = 'Get SS infomation'>";
         echo "<input type = 'hidden' name = 'submitFlag' value = ssinfomation>";
+        echo "<input type = 'hidden' name = 'state' value = '$state'>";
+        echo "<input type = 'hidden' name = 'id' value = $id >";
         echo "</form>";
         break;
     default:
