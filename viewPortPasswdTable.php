@@ -11,25 +11,25 @@ case "allportpasswd":
     if($_POST["state"] == "admin0"){
         $result = mysql_query("SELECT * FROM portPasswd");
         //绘制表头
-        echo "<table border='1'>
-            <tr>
-            <th>id</th>
-            <th>port</th>
-            <th>passwd</th>
-            <th>adminLimit</th>
-            <th>cdkey</th>
-            </tr>";
-while($row = mysql_fetch_array($result)){
-    //打印记录
-    echo "<tr>";
-    echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['port'] . "</td>";
-    echo "<td>" . $row['passwd'] . "</td>";
-    echo "<td>" . $row['adminLimit'] . "</td>";
-    echo "<td>" . $row['cdkey'] . "</td>";
-    echo "</tr>";
-}
-echo "</table>";
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>id</th>";
+        echo "<th>port</th>";
+        echo "<th>passwd</th>";
+        echo "<th>adminLimit</th>";
+        echo "<th>cdkey</th>";
+        echo "</tr>";
+        while($row = mysql_fetch_array($result)){
+            //打印记录
+            echo "<tr>";
+            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['port'] . "</td>";
+            echo "<td>" . $row['passwd'] . "</td>";
+            echo "<td>" . $row['adminLimit'] . "</td>";
+            echo "<td>" . $row['cdkey'] . "</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
     }
     break;
 case "ssinfomation":
