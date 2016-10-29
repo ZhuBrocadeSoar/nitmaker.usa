@@ -6,7 +6,7 @@ if(!$con){
 
 mysql_select_db("ss_user_man", $con);
 
-switch($_POST["flag"]){
+switch($_POST["submitFlag"]){
 case "allportpasswd":
     if($_POST["state"] == "admin0"){
         $result = mysql_query("SELECT * FROM portPasswd");

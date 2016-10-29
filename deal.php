@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     case "success":
         //登录成功的用户的查看自己SS信息的按钮
         echo "<input type = 'submit' value = 'Get SS infomation'>";
-        if($submitFlag != "")
+        if($submitFlag == "")
         $submitFlag = "ssinfomation";
         break;
     default:
