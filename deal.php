@@ -1,5 +1,3 @@
-<html>
-<body>
 <?php
 $con = mysql_connect("localhost","soar","passwd");
 if(!$con){
@@ -74,5 +72,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 ?>
 
-</body>
-</html>
