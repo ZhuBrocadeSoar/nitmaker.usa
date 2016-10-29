@@ -33,6 +33,7 @@ case "allportpasswd":
     }
     break;
 case "ssinfomation":
+    $id = $_POST["id"];
     $result = mysql_query("SELECT id,port,passwd FROM portPasswd WHERE id = $id");
     if(!$result)
         echo "Not find id = $id";
