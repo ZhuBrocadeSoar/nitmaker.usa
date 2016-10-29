@@ -45,21 +45,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     //提交表单
     echo "<form action = 'viewPortPasswdTable.php' method = 'post'>";
+    $submitFlag = "";
     switch($state){
     case "admin0":
         //管理员0的查看所有portpasswd按钮
         echo "<input type = 'submit' value = 'View the portPasswd table'>";
-        echo "<input type = 'hidden' name = 'flag' value = 'allportpasswd'>";
+        $submitFlag = "allportpasswd";
     case "success":
         //登录成功的用户的查看自己SS信息的按钮
         echo "<input type = 'submit' value = 'Get SS infomation'>";
-        echo "<input type = 'hidden' name = 'flag' value = 'ssinfomation'>";
+        if(!$submitFlag)
+        $submitFlag = "ssinfomation";
         break;
     default:
         break;
     }
     echo "<input type = 'hidden' name = 'state' value = '$state'>";
     echo "<input type = 'hidden' name = 'id' value = $id >";
+    echo "<input type = 'hidden' name = 'flag' value = 'allportpasswd'>";
     echo "</form>";
 }else{
     echo "Could not get datas from post<br/>";
