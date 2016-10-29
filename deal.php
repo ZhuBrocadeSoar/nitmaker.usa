@@ -62,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     echo "<input type = 'hidden' name = 'state' value = '$state'>";
     echo "<input type = 'hidden' name = 'id' value = $id >";
-    echo "<input type = 'hidden' name = 'flag' value = 'allportpasswd'>";
+    echo "<input type = 'hidden' name = 'flag' value = $submitFlag>";
     echo "</form>";
 }else{
     echo "Could not get datas from post<br/>";
